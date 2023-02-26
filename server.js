@@ -35,9 +35,9 @@ function startPrompt() {
     type: 'list',
     name: 'menu',
     message: 'What would you like to accomplish?',
-    choices: [ 'view all Departments', 'View all Roles', 'View all Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Empployee Manager', 'Delete Department', 'Delete a Role', 'Delete Employee'],
+    choices: [ 'view all Departments', 'View all Roles', 'View all Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Empployee Manager', 'Delete Department', 'Delete a Role', 'Delete Employee' ],
   }).then(answer => {
-    switch(answer.menu){
+    switch (answer.menu) {
       case 'View all Departments':
         viewAllDepartments();
         break;
@@ -75,6 +75,115 @@ function startPrompt() {
   });
 };
 
+// create view all departments function
+function viewAllDepartments() {
+  const sql = `SELECT * FROM department`;
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err)
+    }
+    console.table(result);
+    startPrompt();
+  });
+
+};
+
+// create view all roles function
+function viewAllRoles() {
+  const sql = `SELECT * FROM role`;
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    console.table(result);
+    startPrompt();
+  });
+};
+
+
+// create view all employees function
+function viewAllEmployees() {
+  const sql = `SELECT employee.id,
+              employee.first_name,
+              employee.last_name,
+              role.title,
+              department.department_name,
+              role.salary,
+              CONCAT(manager.first_name, ' 'manager.lastname ) AS Manager
+              FROM employee
+              LEFT JOIN role ON employee.role_id = role.id
+              LEFT department ON role.department_id = department.id
+              LEFT JOIN employee AS manager on  employee.manager_id = manager.id
+              ORDER BY employee.id`
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err)
+    }
+    console.table(result);
+    startPrompt()
+
+  });
+
+};
+
+// create function for adding a department
+function addDepartment() {
+  inquirer.prompt([ {
+    name: 'department_name',
+    type: 'input',
+    message: 'Add the name of new department.'
+
+  } ]).then(answer =>{
+    const sql = `INSERT INTO department (department_name)
+    VALUES (?)`
+    const params = [answer.deparment_name];
+    db.query(sql, params, (err, result) =>{
+      if(err){
+        console.log(err)
+      }
+      console.table(result);
+      startPrompt()
+    });
+  });
+};
+
+// create function for adding a role
+function addRole() {
+
+};
+
+// create function for adding an employee
+function addEmployee() {
+
+};
+
+// create function for updating an employee role
+function updateEmployeeRole() {
+
+};
+
+// create function updating and employee manager
+function updateEmployeeManager() {
+
+};
+
+// create function for deleting a department
+function deleteDepartment() {
+
+};
+
+// create function for deleting a role
+function deleteRole() {
+
+};
+
+// create function for deleting a employee
+function deleteEmployee() {
+
+};
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
