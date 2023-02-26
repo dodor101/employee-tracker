@@ -1,0 +1,24 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "This application is an employee tracker app that will be executed using the command line.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dodor101/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dodor101/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/dodor101/employee-tracker#readme",
+  "dependencies": {
+    "mysql2": "^3.1.2"
+  }
+}
