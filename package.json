@@ -20,7 +20,7 @@
   "homepage": "https://github.com/dodor101/employee-tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "express": "^4.18.2",
+    "figlet": "^1.5.2",
     "inquirer": "^8.2.4",
     "mysql2": "^3.1.2"
   }
