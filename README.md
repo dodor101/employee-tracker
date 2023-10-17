@@ -32,6 +32,8 @@
 
 <a id="Tech-Stack"></a>
 
+**Language:** JavaScript
+
 **Database:** Mysql
 
 **Server:** Node
