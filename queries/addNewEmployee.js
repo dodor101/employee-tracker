@@ -4,7 +4,7 @@ const connection = require('../config/connection');
 // add an employee
 const addNewEmployee = (startPrompt) => {
   //get all the employee list to make choice of employee's manager
-  connection.query('SELECT * FROM EMPLOYEE', (err, emplRes) => {
+  connection.query('SELECT * FROM EMPLOYEE', (err, employeeRes) => {
     if (err) throw err;
     const employeeChoice = [
       {
@@ -12,7 +12,7 @@ const addNewEmployee = (startPrompt) => {
         value: 0,
       },
     ]; //an employee could have no manager
-    emplRes.forEach(({ first_name, last_name, id }) => {
+    employeeRes.forEach(({ first_name, last_name, id }) => {
       employeeChoice.push({
         name: first_name + ' ' + last_name,
         value: id,
@@ -68,6 +68,7 @@ const addNewEmployee = (startPrompt) => {
               console.log(
                 `successfully inserted employee ${response.first_name} ${response.last_name} with id ${res.insertId}`
               );
+              // display users options again
               startPrompt();
             }
           );

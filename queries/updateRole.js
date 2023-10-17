@@ -4,10 +4,10 @@ const connection = require('../config/connection');
 // update a role
 const updateRole = (startPrompt) => {
   //get all the employee list
-  connection.query('SELECT * FROM EMPLOYEE', (err, emplRes) => {
+  connection.query('SELECT * FROM EMPLOYEE', (err, employeeRes) => {
     if (err) throw err;
     const employeeChoice = [];
-    emplRes.forEach(({ first_name, last_name, id }) => {
+    employeeRes.forEach(({ first_name, last_name, id }) => {
       employeeChoice.push({
         name: first_name + ' ' + last_name,
         value: id,
@@ -48,6 +48,7 @@ const updateRole = (startPrompt) => {
             if (err) throw err;
 
             console.log("successfully updated employee's role!");
+            // display users options again
             startPrompt();
           });
         })

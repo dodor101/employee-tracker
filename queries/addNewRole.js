@@ -42,6 +42,8 @@ const addNewRole = (startPrompt) => {
         connection.query(query, [[response.title, response.salary, response.department]], (err, res) => {
           if (err) throw err;
           console.log(`Successfully inserted ${response.title} role at id ${res.insertId}`);
+          
+          // display users options again
           startPrompt();
         });
       })

@@ -4,7 +4,7 @@ const connection = require('../config/connection');
 // view an employee manager
 const viewEmployeeByManager = (startPrompt) => {
   //get all the employee list
-  connection.query('SELECT * FROM EMPLOYEE', (err, emplRes) => {
+  connection.query('SELECT * FROM EMPLOYEE', (err, employeeRes) => {
     if (err) throw err;
     const employeeChoice = [
       {
@@ -12,7 +12,7 @@ const viewEmployeeByManager = (startPrompt) => {
         value: 0,
       },
     ];
-    emplRes.forEach(({ first_name, last_name, id }) => {
+    employeeRes.forEach(({ first_name, last_name, id }) => {
       employeeChoice.push({
         name: first_name + ' ' + last_name,
         value: id,
@@ -51,6 +51,7 @@ const viewEmployeeByManager = (startPrompt) => {
         connection.query(query, [response.manager_id], (err, res) => {
           if (err) throw err;
           console.table(res);
+          // display users options again
           startPrompt();
         });
       })

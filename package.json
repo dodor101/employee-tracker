@@ -4,7 +4,7 @@
   "description": "This application is an employee tracker app that will be executed using the command line.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,5 @@
     "figlet": "^1.5.2",
     "inquirer": "^8.2.4",
     "mysql2": "^3.1.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }

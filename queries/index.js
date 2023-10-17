@@ -1,5 +1,5 @@
-const viewAllOf = require('./queries');
-const addNewDepartment = require('./addNewdepartment');
+const viewAllOf = require('./viewAllOf');
+const addNewDepartment = require('./addNewDepartment');
 const addNewRole = require('./addNewRole');
 const addNewEmployee = require('./addNewEmployee');
 const updateRole = require('./updateRole');
@@ -10,6 +10,7 @@ const deleteRole = require('./deleteRole');
 const deleteEmployee = require('./deleteEmployee');
 const viewBudget = require('./viewBudget');
 
+// server routes from one exported object
 module.exports = {
   viewAllOf,
   addNewDepartment,

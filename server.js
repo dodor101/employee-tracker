@@ -10,6 +10,7 @@ connection.connect((err) => {
     } else {
       console.log(data);
     }
+    // startPrompt on npm start
     startPrompt();
   });
 });

@@ -16,6 +16,7 @@ const addNewDepartment = (startPrompt) => {
       connection.query(query, [response.name], (err, res) => {
         if (err) throw err;
         console.log(`Successfully inserted ${response.name} department at id ${res.insertId}`);
+        // display users options again
         startPrompt();
       });
     })

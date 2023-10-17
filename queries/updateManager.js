@@ -4,10 +4,10 @@ const connection = require('../config/connection');
 // update a manager
 const updateManager = (startPrompt) => {
   //get all the employee list
-  connection.query('SELECT * FROM EMPLOYEE', (err, emplRes) => {
+  connection.query('SELECT * FROM EMPLOYEE', (err, employeeRes) => {
     if (err) throw err;
     const employeeChoice = [];
-    emplRes.forEach(({ first_name, last_name, id }) => {
+    employeeRes.forEach(({ first_name, last_name, id }) => {
       employeeChoice.push({
         name: first_name + ' ' + last_name,
         value: id,
@@ -20,7 +20,7 @@ const updateManager = (startPrompt) => {
         value: 0,
       },
     ]; //an employee could have no manager
-    emplRes.forEach(({ first_name, last_name, id }) => {
+    employeeRes.forEach(({ first_name, last_name, id }) => {
       managerChoice.push({
         name: first_name + ' ' + last_name,
         value: id,
@@ -38,7 +38,7 @@ const updateManager = (startPrompt) => {
         type: 'list',
         name: 'manager_id',
         choices: managerChoice,
-        message: "whos is the employee's new manager?",
+        message: "who is the employee's new manager?",
       },
     ];
 
@@ -51,6 +51,7 @@ const updateManager = (startPrompt) => {
           if (err) throw err;
 
           console.log("successfully updated employee's manager");
+          // display users options again
           startPrompt();
         });
       })

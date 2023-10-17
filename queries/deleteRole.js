@@ -30,6 +30,7 @@ const deleteRole = (startPrompt) => {
         connection.query(query, [response.id], (err, res) => {
           if (err) throw err;
           console.log(`${res.affectedRows} row(s) successfully deleted!`);
+          // display users options again
           startPrompt();
         });
       })

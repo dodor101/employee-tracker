@@ -21,6 +21,7 @@ const viewAllOf = (table, startPrompt) => {
     if (err) throw err;
     console.table(res);
 
+    // display users options again
     startPrompt();
   });
 };
