@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/dodor101/employee-tracker#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "console.table": "^0.10.0",
-    "figlet": "^1.5.2",
+    "figlet": "^1.6.0",
     "inquirer": "^8.2.4",
     "mysql2": "^3.1.2"
   }

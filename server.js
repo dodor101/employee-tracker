@@ -1,4 +1,5 @@
 const figlet = require('figlet');
+const colors = require('colors');
 const connection = require('./config/connection');
 const startPrompt = require('./queries-options/startupQuestions');
 connection.connect((err) => {
@@ -8,7 +9,7 @@ connection.connect((err) => {
     if (err) {
       console.log('ascii art not loaded');
     } else {
-      console.log(data);
+      console.log(colors.dim(data));
     }
     // startPrompt on npm start
     startPrompt();

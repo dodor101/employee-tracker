@@ -1,4 +1,73 @@
 # Employee-tracker
-* This application is an employee tracker app that will be executed using the command line.
 
-* This application uses mysql2 and inquire version 8.2.4 and as business owner who wants to create many different departments, roles and manage emplyees this the perfact application for you. You can percisely update and add or delete from a chosen table as preferred. 
+# Table of Contents
+
+- [Description](#Description)
+- [Tech Stack](#Tech-Stack)
+- [Usage](#Usage)
+- [Support](#Support)
+- [Author](#Author)
+
+## Description
+
+<a id="Description"></a>
+
+### Employee tracker is a CMS that helps you as a business owner to track and manage your employees with ease. You are able to :
+
+**Query:**
+
+- viewAllOf
+- addNewDepartment
+- addNewRole
+- addNewEmployee
+- updateRole
+- viewEmployeeByManager
+- updateManager
+- deleteDepartment
+- deleteRole
+- deleteEmployee
+- viewBudget
+
+## Tech Stack
+
+<a id="Tech-Stack"></a>
+
+**Database:** Mysql
+
+**Server:** Node
+
+**Cli:** Inquirer
+
+**Npm:** Node package manager
+
+**Fun:** figlet, colors
+
+## Usage
+
+<a id="Usage"></a>
+
+## Make sure to download the project/code and open it in your favorite IDE (VSCODE) and also make sure that to have Mysql installed. After configuring connection then you can run these commands. The app should be running by then.
+
+step 1
+
+```usage
+npm install
+
+```
+
+step 2
+
+```usage
+npm start
+
+```
+
+## Support
+
+<a id="Support"></a> For support, email dodordickenson21@gmail.com or https://www.linkedin.com/in/duckenson-dodor/
+
+## Author
+
+<a id="Author"></a>
+
+- [@dodor101](https://www.github.com/dodor101)
