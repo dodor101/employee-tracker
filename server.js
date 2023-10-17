@@ -1,7 +1,7 @@
 const figlet = require('figlet');
 const colors = require('colors');
 const connection = require('./config/connection');
-const startPrompt = require('./queries-options/startupQuestions');
+const startPrompt = require('./prompter/startPrompt');
 connection.connect((err) => {
   if (err) throw err;
   console.log(`connected as id ${connection.threadId}\n`);
